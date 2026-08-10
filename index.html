@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muse — a spatial canvas for local AI agents</title>
+<meta name="description" content="Muse is a native macOS spatial canvas where your local AI agents live, work, and stay in view. Free alpha — download for macOS 15+.">
+<meta property="og:title" content="Muse — a spatial canvas for local AI agents">
+<meta property="og:description" content="Run Claude Code, Codex, and other local agents on a persistent spatial canvas. Free alpha for macOS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0b0d0f;
+    --ink-2: #101317;
+    --raised: #171b20;
+    --line: rgba(232, 226, 214, 0.1);
+    --paper: #e8e2d6;
+    --paper-dim: rgba(232, 226, 214, 0.58);
+    --paper-faint: rgba(232, 226, 214, 0.32);
+    --stone: #c9a876;
+    --stone-bright: #e3c28a;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+    --serif: "Instrument Serif", Georgia, serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--mono);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  /* Canvas dot grid — the product metaphor, kept barely visible */
+  .field {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image: radial-gradient(rgba(232,226,214,0.055) 1px, transparent 1px);
+    background-size: 26px 26px;
+    mask-image: radial-gradient(ellipse 90% 70% at 50% 20%, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 20%, black 30%, transparent 75%);
+  }
+  .glow {
+    position: fixed; z-index: 0; pointer-events: none;
+    width: 900px; height: 620px; top: -260px; left: 50%; transform: translateX(-50%);
+    background: radial-gradient(ellipse at center, rgba(201,168,118,0.09), transparent 65%);
+  }
+  .wrap { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 0 28px; }
+
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 30px 0 0;
+  }
+  .mark { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--paper); }
+  .mark span { font-size: 13px; letter-spacing: 0.34em; font-weight: 500; }
+  nav a {
+    color: var(--paper-dim); text-decoration: none; font-size: 11px; letter-spacing: 0.12em;
+    margin-left: 26px; transition: color 0.2s;
+  }
+  nav a:hover { color: var(--stone-bright); }
+
+  .hero { padding: 110px 0 40px; text-align: center; }
+  .version-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 10.5px; letter-spacing: 0.16em; color: var(--paper-dim);
+    border: 1px solid var(--line); border-radius: 100px; padding: 7px 16px;
+    background: rgba(23,27,32,0.5);
+    animation: rise 0.7s 0.05s cubic-bezier(0.2,0.7,0.2,1) both;
+  }
+  .version-pill b { color: var(--stone-bright); font-weight: 500; }
+  .version-pill .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--stone-bright);
+    box-shadow: 0 0 8px rgba(227,194,138,0.8); }
+  h1 {
+    font-family: var(--serif); font-weight: 400; font-size: clamp(44px, 7.4vw, 74px);
+    line-height: 1.06; letter-spacing: -0.01em; margin: 34px auto 0; max-width: 15em;
+    animation: rise 0.7s 0.14s cubic-bezier(0.2,0.7,0.2,1) both;
+  }
+  h1 em { font-style: italic; color: var(--stone-bright); }
+  .sub {
+    margin: 26px auto 0; max-width: 34em; color: var(--paper-dim); font-size: 13px;
+    animation: rise 0.7s 0.23s cubic-bezier(0.2,0.7,0.2,1) both;
+  }
+  .cta-row {
+    margin-top: 44px; display: flex; flex-direction: column; align-items: center; gap: 16px;
+    animation: rise 0.7s 0.32s cubic-bezier(0.2,0.7,0.2,1) both;
+  }
+  .download {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: var(--mono); font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+    color: var(--ink); background: var(--paper); text-decoration: none;
+    padding: 17px 34px; border-radius: 10px;
+    box-shadow: 0 0 0 1px rgba(232,226,214,0.15), 0 18px 44px -14px rgba(201,168,118,0.35);
+    transition: transform 0.18s cubic-bezier(0.2,0.7,0.2,1), box-shadow 0.18s, background 0.18s;
+  }
+  .download:hover {
+    transform: translateY(-2px); background: #fff;
+    box-shadow: 0 0 0 1px rgba(232,226,214,0.25), 0 24px 54px -14px rgba(201,168,118,0.5);
+  }
+  .download svg { flex: none; }
+  .meta { font-size: 10.5px; letter-spacing: 0.14em; color: var(--paper-faint); }
+  .meta b { color: var(--paper-dim); font-weight: 400; }
+
+  /* Floating node vignette under the hero */
+  .vignette {
+    margin: 90px auto 0; position: relative; height: 210px; max-width: 660px;
+    animation: rise 0.8s 0.4s cubic-bezier(0.2,0.7,0.2,1) both;
+  }
+  .node {
+    position: absolute; border: 1px solid var(--line); border-radius: 10px;
+    background: linear-gradient(180deg, rgba(23,27,32,0.9), rgba(16,19,23,0.9));
+    padding: 12px 16px; font-size: 10px; letter-spacing: 0.1em; color: var(--paper-dim);
+    box-shadow: 0 20px 40px -20px rgba(0,0,0,0.6);
+  }
+  .node i { display: block; font-style: normal; font-size: 9px; color: var(--paper-faint); margin-top: 3px; }
+  .node .live { color: var(--stone-bright); }
+  .n1 { left: 4%; top: 18px; transform: rotate(-1.2deg); }
+  .n2 { left: 36%; top: 68px; transform: rotate(0.6deg); }
+  .n3 { right: 6%; top: 8px; transform: rotate(1.4deg); }
+  .n4 { right: 20%; top: 128px; transform: rotate(-0.8deg); }
+  .thread {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+  }
+
+  section { padding: 90px 0 0; }
+  .kicker {
+    font-size: 10px; letter-spacing: 0.34em; color: var(--stone);
+    text-transform: uppercase; margin-bottom: 18px;
+  }
+  h2 { font-family: var(--serif); font-weight: 400; font-size: 34px; line-height: 1.15; }
+
+  .steps { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .step { background: var(--ink-2); padding: 26px 24px 30px; }
+  .step .num { font-size: 10px; color: var(--stone); letter-spacing: 0.2em; }
+  .step h3 { font-family: var(--serif); font-weight: 400; font-size: 19px; margin: 12px 0 10px; }
+  .step p { font-size: 11px; color: var(--paper-dim); line-height: 1.75; }
+  .step code {
+    font-size: 10px; color: var(--stone-bright); background: rgba(201,168,118,0.08);
+    padding: 1px 6px; border-radius: 4px;
+  }
+  .gatekeeper {
+    margin-top: 18px; font-size: 10.5px; color: var(--paper-faint); line-height: 1.8;
+    border-left: 2px solid rgba(201,168,118,0.35); padding-left: 16px;
+  }
+
+  .update-note { margin-top: 40px; display: flex; gap: 22px; align-items: flex-start;
+    border: 1px solid var(--line); border-radius: 14px; padding: 28px; background: rgba(16,19,23,0.6); }
+  .update-note p { font-size: 11.5px; color: var(--paper-dim); }
+  .update-note .pulse {
+    flex: none; margin-top: 5px; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--stone-bright); box-shadow: 0 0 0 0 rgba(227,194,138,0.5);
+    animation: pulse 2.4s infinite;
+  }
+
+  #changelog .release { border-top: 1px solid var(--line); padding: 34px 0; display: grid;
+    grid-template-columns: 180px 1fr; gap: 28px; }
+  #changelog .release:first-of-type { margin-top: 42px; }
+  .rel-meta .v { font-family: var(--serif); font-size: 26px; color: var(--paper); }
+  .rel-meta .d { font-size: 10px; color: var(--paper-faint); letter-spacing: 0.14em; margin-top: 6px; }
+  .rel-meta .latest {
+    display: inline-block; margin-top: 10px; font-size: 9px; letter-spacing: 0.2em;
+    color: var(--stone-bright); border: 1px solid rgba(201,168,118,0.4);
+    padding: 3px 9px; border-radius: 100px;
+  }
+  .notes { font-size: 11.5px; color: var(--paper-dim); }
+  .notes h4 { font-family: var(--serif); font-weight: 400; font-size: 17px; color: var(--paper);
+    margin: 18px 0 8px; }
+  .notes h4:first-child { margin-top: 2px; }
+  .notes p { margin: 8px 0; }
+  .notes ul { list-style: none; margin: 8px 0; }
+  .notes li { padding-left: 20px; position: relative; margin: 7px 0; }
+  .notes li::before { content: "—"; position: absolute; left: 0; color: var(--stone); }
+  .notes b, .notes strong { color: var(--paper); font-weight: 500; }
+
+  footer { margin-top: 110px; border-top: 1px solid var(--line); padding: 34px 0 46px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 10px; letter-spacing: 0.14em; color: var(--paper-faint); }
+  footer a { color: var(--paper-dim); text-decoration: none; }
+  footer a:hover { color: var(--stone-bright); }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(227,194,138,0.45); }
+    70% { box-shadow: 0 0 0 12px rgba(227,194,138,0); }
+    100% { box-shadow: 0 0 0 0 rgba(227,194,138,0); }
+  }
+  @media (max-width: 720px) {
+    .steps { grid-template-columns: 1fr; }
+    #changelog .release { grid-template-columns: 1fr; gap: 10px; }
+    .vignette { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="field"></div>
+<div class="glow"></div>
+<div class="wrap">
+
+  <header>
+    <a class="mark" href="#">
+      <svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true">
+        <g fill="#e8e2d6">
+          <ellipse cx="50" cy="12" rx="12.7" ry="10" opacity="0.7"/>
+          <ellipse cx="50" cy="33" rx="19" ry="11.6" opacity="0.8"/>
+          <ellipse cx="50" cy="58" rx="27.5" ry="13.4" opacity="0.9"/>
+          <ellipse cx="50" cy="86" rx="36.9" ry="16.1"/>
+        </g>
+      </svg>
+      <span>MUSE</span>
+    </a>
+    <nav>
+      <a href="#install">INSTALL</a>
+      <a href="#changelog">CHANGELOG</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="version-pill"><span class="dot"></span> FREE ALPHA · <b id="pill-version">v—</b></div>
+    <h1>Give your agents <em>somewhere to live.</em></h1>
+    <p class="sub">Muse is a native macOS spatial canvas where Claude Code, Codex, and your other
+    local agents run side by side — every terminal, browser, and note a node you can see,
+    arrange, and return to.</p>
+    <div class="cta-row">
+      <a class="download" id="download-btn" href="#" download>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/>
+        </svg>
+        Download Muse for macOS
+      </a>
+      <div class="meta" id="download-meta">macOS 15+ · APPLE SILICON &amp; INTEL</div>
+    </div>
+
+    <div class="vignette" aria-hidden="true">
+      <svg class="thread" viewBox="0 0 660 210" fill="none" preserveAspectRatio="none">
+        <path d="M90 50 C 180 90, 200 100, 270 92" stroke="rgba(201,168,118,0.22)" stroke-dasharray="3 5"/>
+        <path d="M400 90 C 470 70, 500 45, 560 36" stroke="rgba(201,168,118,0.22)" stroke-dasharray="3 5"/>
+        <path d="M420 110 C 460 135, 480 145, 510 148" stroke="rgba(201,168,118,0.16)" stroke-dasharray="3 5"/>
+      </svg>
+      <div class="node n1">AGENT · CLAUDE CODE<i class="live">● working — refactor auth flow</i></div>
+      <div class="node n2">TERMINAL · zsh<i>▮ tests passing 214/214</i></div>
+      <div class="node n3">BROWSER · localhost:3000<i>preview — build 47</i></div>
+      <div class="node n4">NOTE · plan.md<i>3 tasks remaining</i></div>
+    </div>
+  </section>
+
+  <section id="install">
+    <div class="kicker">Install</div>
+    <h2>Running in under a minute.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>Download</h3>
+        <p>Grab the zip above and unpack it. You'll get <code>Muse.app</code>.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Move &amp; open</h3>
+        <p>Drop <code>Muse.app</code> into <code>/Applications</code>, then
+        <b>right-click&nbsp;→&nbsp;Open</b> the first time.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>Point it at your tools</h3>
+        <p>Muse finds your installed agent CLIs — Claude Code, Codex, and friends — and
+        gives each one a node on the canvas.</p>
+      </div>
+    </div>
+    <p class="gatekeeper">The alpha isn't notarized with Apple yet, so on first launch macOS will
+    ask you to confirm: right-click the app, choose <b>Open</b>, then <b>Open</b> again — or allow it
+    under System Settings → Privacy &amp; Security. One time only; updates install themselves.</p>
+
+    <div class="update-note">
+      <div class="pulse"></div>
+      <p><b style="color:var(--paper)">Muse keeps itself current.</b><br>
+      When you're on an older build, Muse shows the new changelog and offers a one-click
+      <i>Download&nbsp;&amp;&nbsp;Restart</i>. Every update is fetched over HTTPS and verified against a
+      signed release manifest — exact SHA-256 and byte count — before a single file is swapped.</p>
+    </div>
+  </section>
+
+  <section id="changelog">
+    <div class="kicker">Changelog</div>
+    <h2>What's new, every release.</h2>
+    <div id="releases"></div>
+  </section>
+
+  <footer>
+    <div>MUSE · BUILT IN THE OPEN ALPHA</div>
+    <div><a href="mailto:max@trigify.io">CONTACT</a></div>
+  </footer>
+
+</div>
+
+<script>
+  const fmtBytes = n => n > 1e6 ? (n / 1e6).toFixed(1) + " MB" : Math.round(n / 1e3) + " KB";
+  const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const inline = s => esc(s)
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/`(.+?)`/g, "<code>$1</code>");
+
+  // Minimal markdown → HTML for release notes (headings, bullets, paragraphs).
+  function renderNotes(md) {
+    const out = [];
+    let list = null;
+    for (const raw of md.split("\n")) {
+      const line = raw.trim();
+      if (line.startsWith("- ")) {
+        if (!list) { list = []; }
+        list.push("<li>" + inline(line.slice(2)) + "</li>");
+        continue;
+      }
+      if (list) { out.push("<ul>" + list.join("") + "</ul>"); list = null; }
+      if (!line) continue;
+      if (line.startsWith("#")) {
+        out.push("<h4>" + inline(line.replace(/^#+\s*/, "")) + "</h4>");
+      } else {
+        out.push("<p>" + inline(line) + "</p>");
+      }
+    }
+    if (list) out.push("<ul>" + list.join("") + "</ul>");
+    return out.join("");
+  }
+
+  fetch("updates.json").then(r => r.json()).then(latest => {
+    document.getElementById("pill-version").textContent = "v" + latest.version;
+    const btn = document.getElementById("download-btn");
+    btn.href = latest.artifactURL;
+    document.getElementById("download-meta").innerHTML =
+      "macOS " + latest.minimumMacOSVersion.replace(/\.0$/, "") +
+      "+ · <b>v" + latest.version + "</b> · " + fmtBytes(latest.byteCount) + " · " + latest.date;
+  }).catch(() => {});
+
+  fetch("changelog.json").then(r => r.json()).then(history => {
+    document.getElementById("releases").innerHTML = history.map((rel, i) => `
+      <div class="release">
+        <div class="rel-meta">
+          <div class="v">v${esc(rel.version)}</div>
+          <div class="d">${esc(rel.date)} · BUILD ${rel.build}</div>
+          ${i === 0 ? '<span class="latest">LATEST</span>' : ""}
+        </div>
+        <div class="notes">${renderNotes(rel.notes)}</div>
+      </div>`).join("");
+  }).catch(() => {});
+</script>
+</body>
+</html>
