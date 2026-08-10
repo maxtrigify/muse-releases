@@ -1,0 +1,8 @@
+[
+  {
+    "version": "0.1.0",
+    "build": 1,
+    "date": "2026-08-10",
+    "notes": "First public alpha of Muse \u2014 a native macOS spatial canvas for running local AI agents.\n\n### Highlights\n\n- **Spatial canvas** \u2014 a persistent, zoomable world where every agent, note, browser tab,\n  and terminal lives as a node you can arrange freely.\n- **Local agent supervision** \u2014 launch Claude Code, Codex, and other CLI agents in\n  PTY-backed nodes with restartable, named sessions.\n- **Embedded browser** \u2014 WebKit browser nodes that agents can inspect, click, type in, and\n  screenshot.\n- **Markdown workflows** \u2014 file-backed notes with wiki links, shared documents, and a\n  project brain agents can search.\n- **Voice** \u2014 opt-in realtime voice control with a session-only conversation trace.\n- **Automatic updates** \u2014 Muse now checks for new versions, shows the changelog, and can\n  download and restart in place."
+  }
+]
