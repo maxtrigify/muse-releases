@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.2",
+    "build": 70,
+    "date": "2026-08-11",
+    "notes": "Muse voice input works reliably again, and rapidly updating conversations no longer freeze when\ntheir text changes.\n\n### Fixes\n\n- **Reliable voice input** \u2014 normal listening and push-to-talk now always deliver microphone audio\n  while preserving microphone privacy, echo protection, and interruption handling.\n- **Stable live conversations** \u2014 chat messages, streamed Markdown, and the voice trace no longer\n  trigger macOS selectable-text layout loops during rapid updates.\n- **Copy without layout cost** \u2014 prompts, responses, code blocks, and voice-trace details retain\n  explicit Copy actions without attaching expensive selection overlays to every live row.\n- **Regression protection** \u2014 automated checks now prevent unsafe selection overlays from returning\n  to the dynamic chat and voice-trace rendering boundaries."
+  },
+  {
     "version": "0.1.1",
     "build": 69,
     "date": "2026-08-11",
