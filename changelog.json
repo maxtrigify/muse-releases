@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.1",
+    "build": 69,
+    "date": "2026-08-11",
+    "notes": "Muse now stays responsive through long agent turns, large conversations, and background use.\n\n### Improvements\n\n- **Reliable chat rendering** \u2014 conversations render in bounded, stable pages so long histories\n  and rapid agent updates cannot repeatedly rebuild the whole workspace.\n- **Smooth working feedback** \u2014 the animated thinking orb and status pulse now run independently\n  from chat layout, preserving their motion without consuming the main thread.\n- **Lower CPU and memory use** \u2014 hidden browser tabs, covered windows, offscreen canvas nodes,\n  media, and decorative backgrounds suspend work when they are not visible.\n- **Faster streaming and terminals** \u2014 high-frequency output is batched per agent while terminal\n  bytes continue to render incrementally.\n- **Freeze regression protection** \u2014 automated stress checks now cover large transcripts, bursty\n  output, and accidental frame-driven animation inside the chat layout."
+  },
+  {
     "version": "0.1.0",
     "build": 1,
     "date": "2026-08-10",
