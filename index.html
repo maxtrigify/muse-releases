@@ -265,6 +265,27 @@
     margin-top: 18px; font-size: 10.5px; color: var(--paper-faint); line-height: 1.8;
     border-left: 2px solid rgba(201,168,118,0.35); padding-left: 16px;
   }
+  .first-open {
+    margin-top: 22px; border: 1px solid rgba(201,168,118,0.26); border-radius: 14px;
+    padding: 24px; background: rgba(16,19,23,0.8);
+  }
+  .first-open h3 { font-family: var(--serif); font-size: 20px; font-weight: 400; }
+  .first-open > p { margin-top: 8px; color: var(--paper-dim); font-size: 11px; }
+  .first-open ol { margin: 18px 0 0 20px; color: var(--paper-dim); font-size: 11px; }
+  .first-open li { margin: 8px 0; padding-left: 5px; }
+  .first-open strong { color: var(--paper); font-weight: 500; }
+  .terminal-fix { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .terminal-fix p { color: var(--paper-faint); font-size: 10.5px; }
+  .command-row { margin-top: 10px; display: flex; gap: 8px; align-items: stretch; }
+  .command-row code {
+    min-width: 0; flex: 1; overflow-x: auto; white-space: nowrap; padding: 11px 13px;
+    border-radius: 8px; background: var(--ink); color: var(--stone-bright); font-size: 10px;
+  }
+  .copy-command {
+    flex: none; border: 1px solid var(--line); border-radius: 8px; padding: 0 14px;
+    background: var(--raised); color: var(--paper); font: 500 10px var(--mono); cursor: pointer;
+  }
+  .copy-command:hover { border-color: rgba(201,168,118,0.5); color: var(--stone-bright); }
 
   .update-note { margin-top: 40px; display: flex; gap: 22px; align-items: flex-start;
     border: 1px solid var(--line); border-radius: 14px; padding: 28px; background: rgba(16,19,23,0.6); }
@@ -375,7 +396,7 @@
         Download Muse for macOS
       </a>
       <div class="meta" id="download-meta">macOS 15+ · APPLE SILICON &amp; INTEL</div>
-      <div class="meta">FIRST OPEN: RIGHT-CLICK <b>MUSE.APP</b> → OPEN → OPEN</div>
+      <div class="meta">OPEN THE DMG · DRAG <b>MUSE</b> TO APPLICATIONS</div>
     </div>
 
     <div class="vignette" aria-hidden="true">
@@ -398,24 +419,37 @@
       <div class="step">
         <div class="num">01</div>
         <h3>Download</h3>
-        <p>Grab the zip above and unpack it. You'll get <code>Muse.app</code>.</p>
+        <p>Open the downloaded <code>Muse.dmg</code>. A small installer window appears.</p>
       </div>
       <div class="step">
         <div class="num">02</div>
-        <h3>Move &amp; open</h3>
-        <p>Drop <code>Muse.app</code> into <code>/Applications</code>, then
-        <b>right-click&nbsp;→&nbsp;Open</b> the first time.</p>
+        <h3>Drag to Applications</h3>
+        <p>Drag the <code>Muse</code> icon onto the Applications folder, then eject the installer.</p>
       </div>
       <div class="step">
         <div class="num">03</div>
-        <h3>Point it at your tools</h3>
-        <p>Muse finds your installed agent CLIs — Claude Code, Codex, and friends — and
-        gives each one a node on the canvas.</p>
+        <h3>Open Muse</h3>
+        <p>Open Muse from Applications. If macOS blocks the alpha, follow the one-time steps below.</p>
       </div>
     </div>
-    <p class="gatekeeper">The alpha isn't notarized with Apple yet, so on first launch macOS will
-    ask you to confirm: right-click the app, choose <b>Open</b>, then <b>Open</b> again — or allow it
-    under System Settings → Privacy &amp; Security. One time only; updates install themselves.</p>
+    <div class="first-open">
+      <h3>If macOS says “Muse Not Opened”</h3>
+      <p>The alpha isn't notarized with Apple yet. This approval is required once; Muse updates
+      install themselves afterward.</p>
+      <ol>
+        <li>Click <strong>Done</strong> on Apple’s warning. Don’t choose Move to Bin.</li>
+        <li>Open <strong>System Settings → Privacy &amp; Security</strong>.</li>
+        <li>Scroll to Security and click <strong>Open Anyway</strong> beside Muse.</li>
+        <li>Authenticate with Touch ID or your password, then click <strong>Open</strong>.</li>
+      </ol>
+      <div class="terminal-fix">
+        <p>Still blocked? Open Terminal, paste this one-time command, and press Return:</p>
+        <div class="command-row">
+          <code id="open-command">xattr -dr com.apple.quarantine "/Applications/Muse.app" &amp;&amp; open "/Applications/Muse.app"</code>
+          <button class="copy-command" id="copy-command" type="button">COPY</button>
+        </div>
+      </div>
+    </div>
 
     <div class="update-note">
       <div class="pulse"></div>
@@ -472,11 +506,28 @@
   fetch("updates.json").then(r => r.json()).then(latest => {
     document.getElementById("pill-version").textContent = "v" + latest.version;
     const btn = document.getElementById("download-btn");
-    btn.href = latest.artifactURL;
+    btn.href = latest.downloadURL || latest.artifactURL;
     document.getElementById("download-meta").innerHTML =
       "macOS " + latest.minimumMacOSVersion.replace(/\.0$/, "") +
-      "+ · <b>v" + latest.version + "</b> · " + fmtBytes(latest.byteCount) + " · " + latest.date;
+      "+ · <b>v" + latest.version + "</b> · " +
+      fmtBytes(latest.downloadByteCount || latest.byteCount) + " · " + latest.date;
   }).catch(() => {});
+
+  document.getElementById("copy-command").addEventListener("click", async event => {
+    const button = event.currentTarget;
+    const command = document.getElementById("open-command").textContent;
+    try {
+      await navigator.clipboard.writeText(command);
+      button.textContent = "COPIED";
+      setTimeout(() => { button.textContent = "COPY"; }, 1800);
+    } catch (_) {
+      const range = document.createRange();
+      range.selectNodeContents(document.getElementById("open-command"));
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+  });
 
   fetch("changelog.json").then(r => r.json()).then(history => {
     document.getElementById("releases").innerHTML = history.map((rel, i) => `

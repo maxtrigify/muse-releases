@@ -3,7 +3,10 @@
   "build": 76,
   "date": "2026-08-12",
   "artifactURL": "https://github.com/maxtrigify/muse-releases/releases/download/v0.1.9/Muse-0.1.9.zip",
+  "downloadURL": "https://github.com/maxtrigify/muse-releases/releases/download/v0.1.9/Muse-0.1.9.dmg",
   "sha256": "d2113817b8a84cd67a1fc9ace25cae221d976d0e1b229b97b13bb74516e47942",
   "byteCount": 40763404,
+  "downloadSHA256": "dbc87027fb64618d8557715cfafc52f8af3f8b0919f08a63ee2d8608e333674f",
+  "downloadByteCount": 40833252,
   "minimumMacOSVersion": "15.0"
 }
