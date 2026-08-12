@@ -1,9 +1,9 @@
 {
-  "version": "0.1.4",
+  "version": "0.1.5",
   "build": 72,
   "date": "2026-08-12",
-  "artifactURL": "https://github.com/maxtrigify/muse-releases/releases/download/v0.1.4/Muse-0.1.4.zip",
-  "sha256": "c2e551051ca5ae1910e4ff0ec4c69b9a429d531477867588959c077dfcded2e7",
-  "byteCount": 40564331,
+  "artifactURL": "https://github.com/maxtrigify/muse-releases/releases/download/v0.1.5/Muse-0.1.5.zip",
+  "sha256": "7e3b9f68b816602635c7e698df74828e7b42169b8be0403806f60b10ee65cdee",
+  "byteCount": 40644815,
   "minimumMacOSVersion": "15.0"
 }

@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.5",
+    "build": 72,
+    "date": "2026-08-12",
+    "notes": "Muse now makes delegated agent work visible and lets you safely undo a completed coding turn.\n\n### New\n\n- **Native subagent inspector** \u2014 delegated Codex and Claude runs now show their child agents,\n  current activity, completion state, model, elapsed time, tool count, and token usage when the\n  provider reports it.\n- **Safe turn revert** \u2014 restore the exact workspace checkpoint from before an agent's last turn.\n  Muse refuses the revert when later edits exist, so newer user or agent work is never overwritten.\n\n### Improvements\n\n- **Canonical child-run telemetry** \u2014 provider-specific Codex and Claude events now feed one\n  consistent nested-run model, while missing provider details remain visibly unavailable rather\n  than being guessed."
+  },
+  {
     "version": "0.1.4",
     "build": 72,
     "date": "2026-08-12",
