@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.9",
+    "build": 76,
+    "date": "2026-08-12",
+    "notes": "Muse opens cited files correctly in split view and reliably completes update restarts.\n\n### Fixes\n\n- **Working split-view references** \u2014 file links ending in a line or column reference, such as\n  `Plan.md:31` or `SpatialCanvas.swift:1026:14`, now open the actual local file.\n- **Reliable Download & Restart** \u2014 update shutdown has bounded cleanup and installer fallbacks,\n  preventing a stuck agent process from leaving Muse waiting for a manual quit.\n- **Prompt update discovery** \u2014 update checks bypass local and edge caches so newly published\n  releases appear as soon as the signed feed is deployed."
+  },
+  {
     "version": "0.1.8",
     "build": 75,
     "date": "2026-08-12",
