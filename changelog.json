@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.8",
+    "build": 75,
+    "date": "2026-08-12",
+    "notes": "Muse restores its branded app icon and makes update installation visibly responsive.\n\n### Fixes\n\n- **Branded app icon** \u2014 production packages now include the black-and-lime Muse cairn instead of\n  falling back to macOS's generic application icon.\n- **Visible update progress** \u2014 Download & Restart now reports download percentage, preparation,\n  and restart stages, and surfaces stalled network requests as retryable errors."
+  },
+  {
     "version": "0.1.7",
     "build": 74,
     "date": "2026-08-12",
