@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.6",
+    "build": 73,
+    "date": "2026-08-12",
+    "notes": "Muse now keeps each Codex agent and its in-progress message isolated from every other conversation.\n\n### Fixes\n\n- **Independent Codex sessions** \u2014 Codex agents launched inside Muse no longer inherit a parent\n  Codex task identifier, preventing prompts and attachments from appearing in another task.\n- **Stable Stage-mode drafts** \u2014 switching between agents in Stage mode preserves each agent's\n  composer draft and pending image attachments with the agent that owns them."
+  },
+  {
     "version": "0.1.5",
     "build": 72,
     "date": "2026-08-12",
