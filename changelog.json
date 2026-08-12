@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.7",
+    "build": 74,
+    "date": "2026-08-12",
+    "notes": "This maintenance release rolls the latest Stage-mode artifact previews, delegated-agent\nvisibility, safe turn reverts, and isolated Codex sessions into one current production build.\n\n### Improvements\n\n- **Current production package** \u2014 installs the latest completed Muse fixes from the production\n  branch as a single update."
+  },
+  {
     "version": "0.1.6",
     "build": 73,
     "date": "2026-08-12",
