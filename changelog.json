@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.11",
+    "build": 78,
+    "date": "2026-08-13",
+    "notes": "You can now launch Grok agents on the canvas and run command-palette actions entirely from the keyboard.\n\n### New\n\n- **Grok agents** \u2014 add a Grok node the same way as Claude Code or Codex. Muse uses your existing\n  `grok` login, maps plan / workspace / bypass permissions, and streams the conversation in chat.\n- **Keyboard command palette** \u2014 press \u2318F, type to filter, use \u2191/\u2193 to move, and Enter to run.\n  Searching for a new agent no longer requires the mouse.\n\n### Fixes\n\n- **Composer focus** \u2014 newly opened agent chats take keyboard focus after the launch sheet closes,\n  so the first keystrokes go into the prompt instead of nowhere."
+  },
+  {
     "version": "0.1.10",
     "build": 77,
     "date": "2026-08-13",
