@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.12",
+    "build": 79,
+    "date": "2026-08-13",
+    "notes": "Muse widgets can now combine fully custom HTML designs with reliable scheduled live data.\n\n### New\n\n- **Custom live widgets** \u2014 design widget cards with your own HTML, CSS, SVG, and JavaScript while\n  keeping Muse's background schedules and refresh controls.\n- **Live data bridge** \u2014 scheduled JSON data is available to custom widgets immediately and emits\n  an update event whenever new data arrives, enabling branded goals, progress bars, and dashboards.\n\n### Compatibility\n\n- **Existing widgets stay intact** \u2014 legacy custom widget state remains separate from scheduled\n  data, so current HTML widgets continue to load without migration."
+  },
+  {
     "version": "0.1.11",
     "build": 78,
     "date": "2026-08-13",
