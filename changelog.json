@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.10",
+    "build": 77,
+    "date": "2026-08-13",
+    "notes": "Muse agent development is now isolated and self-cleaning, preventing parallel coding tasks from\ninterfering with one another or leaving package operations stuck in the background.\n\n### Reliability\n\n- **Isolated coding tasks** \u2014 each agent task now gets an explicit worktree, branch, and SwiftPM\n  build area so concurrent work cannot overwrite another task or share a wedged cache.\n- **Bounded package operations** \u2014 Swift builds use locked dependencies, concurrency guards, logs,\n  and full child-process cleanup when a task is cancelled or times out.\n- **Safe workspace cleanup** \u2014 finished worktrees are checked for uncommitted changes and archived\n  before removal, while orphan diagnostics target only confirmed Muse processes."
+  },
+  {
     "version": "0.1.9",
     "build": 76,
     "date": "2026-08-12",
