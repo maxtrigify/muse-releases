@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.15",
+    "build": 82,
+    "date": "2026-08-19",
+    "notes": "Muse makes the conversation workspace clearer and lets you browse one-off sessions across canvases\nwithout losing your place.\n\n### Improvements\n\n- **Clear Chat layout** \u2014 the conversation-first layout is now called Chat, with distinct Sessions\n  and Bots tabs that make one-off agents easy to tell apart from saved teammates and teams.\n- **Canvas-scoped sessions** \u2014 filter Sessions by canvas and open any matching conversation while\n  staying in Chat; browsing sessions no longer switches the active canvas or changes its layout.\n- **Honest session status** \u2014 session rows now show Starting, Working, Done, Needs you, Failed,\n  Idle, or Stopped instead of displaying a permanent green activity dot.\n\n### Fixes\n\n- **Close sessions from Chat** \u2014 selected or hovered session rows expose a direct close control,\n  including sessions that belong to a different canvas."
+  },
+  {
     "version": "0.1.14",
     "build": 81,
     "date": "2026-08-19",
