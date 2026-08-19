@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.16",
+    "build": 83,
+    "date": "2026-08-19",
+    "notes": "Muse makes starting Chat sessions reliable and keeps browser work attached to the conversation\nthat opened it.\n\n### Improvements\n\n- **Stable new-session picker** \u2014 the Chat `+` button now opens a persistent provider picker, so\n  you can choose a new agent without a nested menu collapsing while you move through it.\n- **Browsers belong to their chat** \u2014 when an agent opens a website from Chat, Muse presents it in\n  that conversation's right-hand work panel and reuses it for later tabs.\n\n### Reliability\n\n- **Conversation-safe browser sessions** \u2014 each agent keeps its own browser surface, browser-to-chat\n  associations survive restarts, and background agents no longer take over the browser in the chat\n  you are currently reading.\n- **Reliable agent creation sheets** \u2014 moving from the agent manager into the custom-agent creator\n  now waits for the first sheet to close cleanly instead of briefly opening and disappearing."
+  },
+  {
     "version": "0.1.15",
     "build": 82,
     "date": "2026-08-19",
