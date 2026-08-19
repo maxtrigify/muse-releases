@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.14",
+    "build": 81,
+    "date": "2026-08-19",
+    "notes": "Muse now has a collaborative Bots workspace where saved agents can work together in durable,\nvoice-controlled team rooms with shared project knowledge and private bot memory.\n\n### New\n\n- **Bots workspace** \u2014 create and manage saved bots and teams, talk to one bot or an entire team\n  with keyboard-friendly `@` mentions and `@channel`, and keep each room's conversation isolated.\n- **Real team handoffs** \u2014 teammates can plan, review, delegate, and return work in one bounded\n  workflow, with clearly attributed replies and safeguards against duplicate or endless messages.\n- **Voice control in Bots mode** \u2014 find bots and teams, open their rooms, start fresh sessions, and\n  direct work using the same full voice controls available elsewhere in Muse.\n- **Project and bot memory** \u2014 Project Brain provides durable shared context while each bot keeps\n  profile-isolated memory, working notes, and citations across sessions.\n- **Routines and webhooks** \u2014 create scheduled or webhook-driven automations with approval gates,\n  execution history, and a bundled local hook service.\n\n### Improvements\n\n- **Readable team chat** \u2014 Markdown rendering, inline mention chips, distinct bot identities, and\n  edit/delete controls for both teams and bots make active rooms easier to follow and manage.\n- **Long-running sessions** \u2014 fresh-session and context-compaction support keeps established team\n  rooms useful without carrying unlimited transcript history into every new task.\n- **Visual polish** \u2014 Nightglass and Glasswing themes add richer translucent surfaces, and the\n  tool catalogue now includes recognizable provider and plugin artwork.\n\n### Reliability\n\n- **Rock-solid memory startup** \u2014 transient Project Brain index contention now waits safely and\n  can no longer silently remove memory tools from a running workspace.\n- **Bounded collaboration** \u2014 courtesy replies do not retrigger teammates, handoffs have hop\n  limits, and high-volume transcripts update the UI at a controlled cadence."
+  },
+  {
     "version": "0.1.13",
     "build": 80,
     "date": "2026-08-13",
