@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.18",
+    "build": 85,
+    "date": "2026-08-26",
+    "notes": "Muse brings voice controls into Chat and takes you straight into every new session you start.\n\n### Improvements\n\n- **Voice controls in Chat** \u2014 start a conversation, give a local command, dictate verbatim, switch\n  operating modes, or open voice settings directly from the Chat sidebar.\n- **New sessions open immediately** \u2014 choosing a provider from either new-session menu now creates,\n  selects, and focuses that conversation as soon as the agent is ready."
+  },
+  {
     "version": "0.1.17",
     "build": 84,
     "date": "2026-08-26",
