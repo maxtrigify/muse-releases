@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.17",
+    "build": 84,
+    "date": "2026-08-26",
+    "notes": "Muse now cleans up agent processes reliably when the app closes, preventing abandoned sessions\nfrom continuing to consume CPU in the background.\n\n### Reliability\n\n- **No orphaned agent processes** \u2014 quitting or crashing Muse now terminates the complete process\n  group for each Codex, Grok, or other terminal-backed agent, including stubborn child processes\n  that need a forced shutdown.\n- **Accurate session activity** \u2014 the lifecycle monitor runs independently from the provider process,\n  so it cannot make an otherwise idle terminal session appear busy."
+  },
+  {
     "version": "0.1.16",
     "build": 83,
     "date": "2026-08-19",
