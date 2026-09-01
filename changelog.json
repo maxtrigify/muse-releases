@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.19",
+    "build": 86,
+    "date": "2026-09-01",
+    "notes": "Muse makes first launch fit comfortably on laptop displays and prepares the Mac for secure,\nsubscription-aware remote access without moving local work into the cloud.\n\n### Improvements\n\n- **A first-run screen that fits** \u2014 onboarding now keeps its privacy confirmation and Enter\n  workspace action visible while the detailed readiness checks scroll independently.\n- **Clear local and cloud voice boundaries** \u2014 the setup flow distinguishes private on-device\n  Command and Dictate from optional cloud Talk before you enter the workspace.\n- **Remote-ready Mac host** \u2014 Muse now includes the authenticated pairing, scoped approvals,\n  attachment, health, and entitlement foundations required by the separate mobile client.\n\n### Reliability\n\n- **Hardened desktop packaging** \u2014 production builds verify required resources, helper tools,\n  signatures, archive integrity, and update metadata before publication."
+  },
+  {
     "version": "0.1.18",
     "build": 85,
     "date": "2026-08-26",
