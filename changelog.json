@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.25",
+    "build": 92,
+    "date": "2026-09-02",
+    "notes": "Model pickers now show the current models available through each configured harness and account.\n\n### Improvements\n\n- **Live model catalogs** \u2014 Codex, Cursor, Grok, Kimi, OpenCode, and direct model providers now\n  populate the shared picker from their authenticated catalog, with safe offline fallbacks.\n- **Latest Claude aliases** \u2014 Claude Code offers Sonnet, Opus, and Haiku aliases that follow the\n  latest model available to the signed-in account.\n- **Consistent bot setup** \u2014 hiring, creating, editing, and chatting with a bot now use the same\n  model source and expose the same installed harness choices.\n- **Current Codex reasoning controls** \u2014 Codex model variants now show their supported effort\n  range, including `xhigh`, `max`, and `ultra` where available.\n\n### Fixes\n\n- **No duplicate OpenAI session entry** \u2014 the one-off session menu no longer displays the internal\n  OpenAI API transport beside Codex. The owned transport remains available to durable bots as\n  Muse Harness."
+  },
+  {
     "version": "0.1.24",
     "build": 91,
     "date": "2026-09-02",
