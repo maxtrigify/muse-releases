@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.24",
+    "build": 91,
+    "date": "2026-09-02",
+    "notes": "Muse Harness now runs OpenAI, Claude, Grok, and Kimi models while Muse keeps control of each\nbot's instructions, tools, and local conversation memory.\n\n### Improvements\n\n- **Four direct model providers** \u2014 choose OpenAI GPT, Anthropic Claude, xAI Grok, or Moonshot\n  Kimi from the same Muse Harness model picker.\n- **One conversation across models** \u2014 switch model vendors on the next turn without losing the\n  bot's existing Muse-owned chat history.\n- **Secure provider setup** \u2014 add or remove each provider's API key in the new Settings \u2192 Models\n  screen; keys remain in Muse's secure credential store.\n- **Provider-native agent loops** \u2014 Muse speaks each vendor's supported Responses, Messages, or\n  Chat Completions protocol while keeping tool execution in Muse.\n\n### Reliability\n\n- **Authoritative instructions everywhere** \u2014 every direct provider receives the bot's current\n  instructions in its real system channel on every turn.\n- **Safe model switching** \u2014 incompatible reasoning settings are cleared automatically, and old\n  OpenAI response identifiers are never forwarded to another vendor."
+  },
+  {
     "version": "0.1.23",
     "build": 90,
     "date": "2026-09-02",
