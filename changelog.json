@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.27",
+    "build": 94,
+    "date": "2026-09-02",
+    "notes": "Voice navigation now works the same way in Chat and Canvas.\n\n### Improvements\n\n- **Voice can see every session** \u2014 both conversational Talk and local Command receive the full\n  bot, team, and one-off session roster across all canvases from the moment they start.\n- **Open sessions by voice** \u2014 say \u201cswitch to Coder session\u201d or \u201copen Ada\u201d to move directly to an\n  existing conversation without sending it a new prompt.\n- **Switch Chat lists hands-free** \u2014 \u201cshow my sessions,\u201d \u201cgo to bots,\u201d and similar phrases open the\n  requested Chat sidebar immediately.\n- **Shared voice tools** \u2014 cloud voice can list sessions, resolve uncertain names, open existing\n  sessions, and switch between the Bots and Sessions lists through the same control plane."
+  },
+  {
     "version": "0.1.26",
     "build": 93,
     "date": "2026-09-02",
