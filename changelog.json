@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.20",
+    "build": 87,
+    "date": "2026-09-02",
+    "notes": "Muse restores reliable conversations for desktop sessions and saved bots.\n\n### Fixes\n\n- **Sessions and bots respond again** \u2014 agent activity and transcript updates now remain connected\n  even if another part of Muse's startup encounters a problem, preventing conversations from\n  becoming stuck on Starting.\n- **Send failures stay visible** \u2014 a message that cannot be delivered now leaves a clear failure\n  in the conversation or session instead of disappearing without explanation."
+  },
+  {
     "version": "0.1.19",
     "build": 86,
     "date": "2026-09-01",
