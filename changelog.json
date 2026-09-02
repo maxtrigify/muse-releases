@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.23",
+    "build": 90,
+    "date": "2026-09-02",
+    "notes": "Muse now owns the system prompt and conversational memory for direct OpenAI bots.\n\n### Improvements\n\n- **Muse-owned agent sessions** \u2014 direct OpenAI bots now use a stable Muse session rather than\n  treating a provider response ID as the conversation. Their recent user and assistant history is\n  stored locally and privately on this Mac.\n- **Instructions refresh without forgetting the conversation** \u2014 editing a bot's system prompt\n  takes effect on its next turn while its previous chat remains available.\n- **Provider-neutral harness foundation** \u2014 Muse now owns the model loop, tool execution, session\n  limits, and events behind a backend interface designed for additional model providers.\n- **Clearer runtime choice** \u2014 the bot editor now labels this path \u201cMuse Harness \u00b7 OpenAI\u201d and\n  explains which responsibilities stay with Muse.\n\n### Reliability\n\n- **Private bounded transcripts** \u2014 local harness sessions use user-only file permissions and\n  bounded history so conversations cannot grow without limit.\n- **Smooth session migration** \u2014 conversations started by the previous direct OpenAI runtime\n  migrate to stable Muse session IDs on their next turn."
+  },
+  {
     "version": "0.1.22",
     "build": 89,
     "date": "2026-09-02",
