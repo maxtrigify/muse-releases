@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.21",
+    "build": 88,
+    "date": "2026-09-02",
+    "notes": "Muse makes saved bot instructions authoritative on every desktop conversation turn.\n\n### Improvements\n\n- **True system-prompt bots** \u2014 choose OpenAI API as a custom bot's harness to send its private\n  instructions as an actual system message, with resumable conversations and Muse tool access.\n\n### Fixes\n\n- **Codex follows edited bot instructions** \u2014 fresh and resumed Codex turns now receive the\n  current saved instructions instead of relying on stale session context.\n- **First messages receive their full brief** \u2014 startup now installs the memory and profile\n  bootstrap before agents can launch, removing a race that could omit a bot's role."
+  },
+  {
     "version": "0.1.20",
     "build": 87,
     "date": "2026-09-02",
