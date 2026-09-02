@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.26",
+    "build": 93,
+    "date": "2026-09-02",
+    "notes": "Claude Code's model picker now includes Fable 5.1 and a moving Fable alias.\n\n### Fixes\n\n- **Fable 5.1 is selectable** \u2014 Claude Code sessions and bots now expose the current\n  `claude-fable-5-1` model.\n- **Fable stays current** \u2014 the `fable` choice follows whichever Fable release the installed\n  Claude Code account resolves as latest, matching the existing Sonnet, Opus, and Haiku aliases.\n- **Muse Harness fallback updated** \u2014 direct Anthropic bots include Fable 5.1 even when the live\n  models endpoint is temporarily unavailable."
+  },
+  {
     "version": "0.1.25",
     "build": 92,
     "date": "2026-09-02",
