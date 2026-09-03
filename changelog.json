@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.28",
+    "build": 95,
+    "date": "2026-09-03",
+    "notes": "Long-running commands now stay attached to the agent that started them.\n\n### Improvements\n\n- **Reliable background commands** \u2014 agents start long builds, tests, and servers in a\n  Muse-supervised terminal instead of a provider-private background process that can disappear\n  when the model finishes its turn.\n- **Completion without polling** \u2014 the new `terminal.wait` tool waits on typed runtime events and\n  returns the command's current state, exit code, and bounded output.\n- **Every harness follows one protocol** \u2014 Claude Code, Codex, Cursor, Grok, Hermes, Kimi,\n  OpenCode, and Muse Harness receive the same current background-job guidance on new and resumed\n  turns.\n- **Long waits stay connected** \u2014 Muse's MCP bridge now extends its control-socket deadline for\n  event and terminal waits instead of cutting them off at the normal ten-second request timeout."
+  },
+  {
     "version": "0.1.27",
     "build": 94,
     "date": "2026-09-02",
