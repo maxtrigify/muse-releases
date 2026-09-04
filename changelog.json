@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.30",
+    "build": 97,
+    "date": "2026-09-04",
+    "notes": "Bots get faces, replies lead with the answer, and the surface switch joins the window controls.\n\n### Improvements\n\n- **Bots have faces** \u2014 hiring a bot now starts by picking one of eight drawn faces. Each blinks\n  on its own rhythm, scans while the bot is working, looks straight at you when it needs an\n  answer, and closes its eyes when the bot goes offline.\n- **A hire sheet that fits what it asks** \u2014 the sheet sizes to its content instead of a fixed\n  slab, the avatar previews as you type, and Advanced collapses into a single row showing the\n  harness, model, and permissions you are agreeing to.\n- **Sessions say what they are about** \u2014 every session in the rail carries a one-line preview of\n  the brief you opened it with, and shows the current step while it is working.\n- **Chat and Canvas sit with the window controls** \u2014 the surface switch moved off the middle of\n  the screen onto the traffic-light line beside the sidebar toggle. It no longer covers the\n  conversation or your node cards, and it keeps one home whether the sidebar is open or closed.\n- **You can see what an agent is doing** \u2014 a working agent shows its steps as it takes them, each\n  ticked off with the command behind it, instead of a single spinner and a timer.\n- **Answers lead with the answer** \u2014 a long reply keeps its opening statement in view and puts\n  the rest behind one line, so a busy transcript stays readable.\n- **Clearer questions** \u2014 when an agent asks you something, its options render as a card with\n  numbered choices, or with checkboxes and a Next button when it can take several answers."
+  },
+  {
     "version": "0.1.29",
     "build": 96,
     "date": "2026-09-04",
