@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.31",
+    "build": 98,
+    "date": "2026-09-04",
+    "notes": "Team rooms recover from stuck agents and make every handoff visible.\n\n### Fixes\n\n- **Teams cannot spin forever** \u2014 if a team agent produces no activity for five minutes, Muse\n  stops the wedged worker and unlocks the room so you can retry. If the agent already finished\n  its answer but its provider failed to exit, Muse preserves and displays that answer first.\n- **Handoffs are visible** \u2014 whenever one teammate passes work to another, the shared room now\n  shows who received it and the exact task they were given, including their `@handle`."
+  },
+  {
     "version": "0.1.30",
     "build": 97,
     "date": "2026-09-04",
