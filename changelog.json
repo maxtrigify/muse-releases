@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.29",
+    "build": 96,
+    "date": "2026-09-04",
+    "notes": "The chat sidebar returns as a proper rail, and the window controls line up with it.\n\n### Improvements\n\n- **A rail you can navigate** \u2014 the chat sidebar now opens with a workspace switcher, a live\n  search row, and separate bots, teams, and sessions groups that each collapse on their own.\n- **Controls that stay put** \u2014 the sidebar toggle sits on the same line as the window buttons and\n  keeps one fixed home instead of moving when you open or close the rail. It is now available on\n  every chat surface, so collapsing the sidebar in Activity, Files, Widgets, or Routines no longer\n  leaves you without a way to bring it back.\n- **Even group controls** \u2014 the add buttons for bots, teams, and sessions are the same size and\n  share one edge.\n- **The session creator stays put** \u2014 starting a session, hiring a bot, or creating a team opens\n  inside the window rather than spilling past its edge.\n- **A calmer conversation** \u2014 the pinned environment card starts hidden; the toolbar button brings\n  it back when you want it."
+  },
+  {
     "version": "0.1.28",
     "build": 95,
     "date": "2026-09-03",
