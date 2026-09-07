@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.32",
+    "build": 99,
+    "date": "2026-09-07",
+    "notes": "Clearer conversations, shared memory, more reliable bots and teams, and early iPhone companion support.\n\n### Improvements\n\n- **Visual answers stay useful** \u2014 diagrams and other visual explanations remain visible in chat,\n  with supporting detail and follow-up exploration easier to reach.\n- **Questions are easier to answer** \u2014 theme-aware question cards present clear choices and a\n  custom-answer option when none of the suggestions fits.\n- **Memory follows your work** \u2014 sessions and bots can use reviewed preferences and relevant\n  project knowledge across agent providers. Each bot's private notes stay scoped to that bot.\n- **Early iPhone companion support** \u2014 the Mac host supports pairing, saved conversations,\n  bot messages, and shared team rooms for the companion test app. The companion has a Nightglass\n  interface; iPhone distribution remains a separate test build, not part of this Mac download.\n\n### Fixes\n\n- **Bot messages reach the right place** \u2014 sending from mobile works even when the Mac is showing\n  a different canvas. Failed sends keep the draft and a visible error instead of briefly flashing.\n- **Saved conversations are available sooner** \u2014 mobile can load persisted history without\n  waiting for general service startup.\n- **Cloud memory cannot hold up a message** \u2014 startup no longer rebuilds every memory record,\n  and automatic memory lookup skips files that still need downloading from iCloud.\n- **Deleted bots stay deleted** \u2014 old sessions belonging to a deleted bot no longer appear in the\n  mobile list, and deleting a session removes its stale channel entry. A deleted bot's name can\n  be used again without reviving its old sessions.\n- **The companion stays current** \u2014 the updated iPhone test app refreshes bots and sessions while\n  open, closes conversations removed on the Mac, and supports both keyboard Send and the send button.\n- **More reliable continuity** \u2014 agent sessions and team conversations retain their ownership and\n  routing as work moves between surfaces."
+  },
+  {
     "version": "0.1.31",
     "build": 98,
     "date": "2026-09-04",
