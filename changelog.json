@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.36",
+    "build": 103,
+    "date": "2026-09-08",
+    "notes": "Read complete answers and work with email drafts directly in your conversation.\n\n### Improvements\n\n- **Email drafts stay in chat** \u2014 view the full message, edit and save a local draft,\n  copy it, or open it in your mail app.\n- **Browse inbox results inline** \u2014 expand messages, filter unread items, and prepare\n  reply drafts when an agent returns an inbox card.\n- **Long answers remain visible** \u2014 complete replies, diagrams, tables, and cards no\n  longer disappear behind an automatic \u201cFull explanation\u201d link.\n\n### Fixes\n\n- **Research Team documents open beside the conversation** \u2014 document links now open\n  in the right work panel.\n- **Delegated agents stay with their parent** \u2014 nested agents remain within the session\n  that started them instead of appearing as separate top-level conversations."
+  },
+  {
     "version": "0.1.35",
     "build": 102,
     "date": "2026-09-08",
