@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.34",
+    "build": 101,
+    "date": "2026-09-08",
+    "notes": "Keep separate conversations separate, even when they use the same workspace.\n\n### Fixes\n\n- **Sessions keep their own history** \u2014 Codex and Claude terminal-history recovery now reads\n  only the session explicitly associated with that chat. A newer conversation in the same\n  folder can no longer be adopted by another chat.\n- **Reopened sessions retain their identity** \u2014 reopening a saved terminal session preserves\n  its exact provider session ID through the return to chat.\n- **Missing history stays isolated** \u2014 if a session cannot be identified, Muse leaves its\n  history alone instead of guessing from nearby session files.\n\n- **Team replies lay out more reliably** \u2014 rich team messages use a stable layout, avoiding\n  repeated sizing work for tables and diagrams.\n\nThis update prevents new history mix-ups; it does not automatically separate conversations\nthat were already mixed in an earlier version."
+  },
+  {
     "version": "0.1.33",
     "build": 100,
     "date": "2026-09-08",
