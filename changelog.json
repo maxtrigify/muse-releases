@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.33",
+    "build": 100,
+    "date": "2026-09-08",
+    "notes": "Codex conversations recover correctly after restarting Muse.\n\n### Fixes\n\n- **Your history returns after restart** \u2014 saved Codex conversations now load from both older\n  and current session formats, including conversations spanning a Codex update.\n- **Follow-ups keep their context** \u2014 switching a reopened Codex session back into chat retains\n  its saved conversation instead of starting a fresh session.\n- **Restored chats stay readable** \u2014 Muse context and internal instructions stay out of the\n  visible conversation, and team-only replies remain separate from private chats.\n- **Diagrams fit the conversation** \u2014 inline diagrams stay compact and scrolling continues\n  naturally through the chat. Response details also stay within a stable layout."
+  },
+  {
     "version": "0.1.32",
     "build": 99,
     "date": "2026-09-07",
