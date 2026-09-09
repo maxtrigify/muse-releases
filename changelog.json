@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.37",
+    "build": 104,
+    "date": "2026-09-09",
+    "notes": "Keep Muse running reliably and long-running agent work under supervision.\n\n### Fixes\n\n- **Muse no longer crashes when your Mac's thermal state changes** \u2014 temperature\n  notifications are now handled safely, preventing the unexpected quits seen during use.\n- **Long-running agent work stays supervised** \u2014 headless Claude runs no longer start\n  native background jobs that can disappear when a reply ends. Agents now use Muse-owned\n  terminals for durable commands and wait for native subagents before finishing."
+  },
+  {
     "version": "0.1.36",
     "build": 103,
     "date": "2026-09-08",
