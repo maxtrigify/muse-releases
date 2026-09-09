@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.38",
+    "build": 105,
+    "date": "2026-09-09",
+    "notes": "### Fixes\n\n- **Approve native Codex tool requests from chat** \u2014 MCP permission choices now appear\n  correctly, and waiting sessions no longer show Done because their terminal title animates.\n- **Browser tools work with the preview closed** \u2014 agents can inspect, interact with,\n  and capture browser pages without requiring you to keep their panel visible.\n- **Builds tolerate iCloud-backed worktrees** \u2014 guarded builds freeze their source inputs\n  before compilation and report low disk space before starting.\n- **Old build caches are cleaned up automatically** \u2014 inactive task caches are now capped\n  so accumulated builds do not fill your disk.\n- **Background commands use Muse supervision** \u2014 resumed Claude runs receive explicit\n  recovery instructions when native background-task options are unavailable."
+  },
+  {
     "version": "0.1.37",
     "build": 104,
     "date": "2026-09-09",
