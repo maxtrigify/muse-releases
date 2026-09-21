@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.39",
+    "build": 106,
+    "date": "2026-09-21",
+    "notes": "### Improvements\n\n- **Message a Muse team from your phone** \u2014 experimental iMessage support connects\n  your own Photon account to a selected team, with pairing and working feedback.\n- **Complete website sign-in privately** \u2014 connected messaging sessions can send\n  short-lived links for website access, login and approvals. Your Mac must stay online.\n- **Try the Nightscreen theme** \u2014 painted backgrounds sit behind matte-glass surfaces,\n  with clearer bot, team and session icons.\n- **Smoother everyday navigation** \u2014 chat, tabs, lists and the command palette now use\n  consistent motion, while palette rows stay still under the pointer.\n\n### Fixes\n\n- Conversation file and website links open in the chat work panel.\n- Private sign-in links are fully tappable and avoid unrelated page links.\n- Messaging recovery preserves review gates and keeps replies attached to their request.\n- Running bots and teams are easier to spot in the sidebar."
+  },
+  {
     "version": "0.1.38",
     "build": 105,
     "date": "2026-09-09",
