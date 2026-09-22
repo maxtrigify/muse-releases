@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.40",
+    "build": 107,
+    "date": "2026-09-22",
+    "notes": "### Improvements\n\n- **Organise conversations with optional projects** \u2014 bots and teams keep their ongoing\n  chats, with a visible Working in indicator to select, correct or clear the active project.\n- **Choose a project when starting a session** \u2014 select an existing project or create one\n  before choosing your agent. Sessions also show their active project above the chat.\n- **Create projects with optional source folders** \u2014 name a project and add folders from\n  your Mac, or leave folders empty for research, writing and other work. Files stay in place.\n- **Keep project context attached to work** \u2014 project memory and documents follow the\n  assigned project. Changing the current selection preserves chat history and keeps\n  running tasks and delegated work attached to their original project.\n\n### Fixes\n\n- Conversation summaries retain project attribution, including explicit labels where\n  older history has no recorded project.\n- Existing conversations retain their workspace association during migration."
+  },
+  {
     "version": "0.1.39",
     "build": 106,
     "date": "2026-09-21",
