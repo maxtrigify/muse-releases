@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.42",
+    "build": 109,
+    "date": "2026-09-29",
+    "notes": "### Improvements\n\n- **Sign in to each account from one click** \u2014 Log in now opens Terminal with the\n  provider's own sign-in for that account (Claude Code, Codex, Grok, Kimi, OpenCode and\n  Hermes), and Settings \u2192 Accounts updates to Signed in automatically when you finish.\n- **See the right models for each account** \u2014 the model picker lists the models available\n  to the account the agent runs on, so a personal account no longer shows your work plan's\n  models. Codex, Grok, Kimi, Cursor and OpenCode read their catalogs per account.\n- **Clearer account options** \u2014 each provider explains whether it uses its own login, an\n  API key, or this Mac's existing login.\n- **Memory that keeps up with you** \u2014 trusted agent memories are confirmed automatically,\n  new work defaults to your workspace project, and agents recall relevant memory when you\n  ask what was decided before.\n\n### Fixes\n\n- Log in no longer opens an invisible terminal on the canvas, and Claude Code, Kimi and\n  Hermes now start their real login commands."
+  },
+  {
     "version": "0.1.41",
     "build": 108,
     "date": "2026-09-29",
