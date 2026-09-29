@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.41",
+    "build": 108,
+    "date": "2026-09-29",
+    "notes": "### Improvements\n\n- **Use more than one subscription** \u2014 add accounts such as Work and Personal in\n  Settings \u2192 Accounts, then sign in to Claude Code, Codex, Grok, Kimi, OpenCode or Hermes\n  separately for each one, or add an API key (including Cursor and the Muse harness).\n  Muse never sees your provider logins; each provider signs in with its own login.\n- **Choose the account per agent or per project** \u2014 every agent shows which account it\n  runs on in its composer and canvas footer, and you can switch with one click. Projects\n  can set a default account so work stays on work subscriptions.\n- **Keep going when you hit a usage limit** \u2014 when an account reaches its limit, Muse\n  offers to continue on another account or wait for the reset. Projects can choose to wait\n  or switch automatically.\n- **Your setup follows every account** \u2014 settings, skills and instructions are shared from\n  your main login, and conversations carry a short recap when they move between accounts.\n\n### Fixes\n\n- Agents can no longer hand work to an agent on a different account without asking you."
+  },
+  {
     "version": "0.1.40",
     "build": 107,
     "date": "2026-09-22",
