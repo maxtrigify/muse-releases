@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.43",
+    "build": 110,
+    "date": "2026-09-29",
+    "notes": "### Fixes\n\n- **More reliable account isolation** \u2014 signing in to a named provider account and\n  launching its agents no longer inherit conflicting provider credentials from the\n  shell that opened Muse. Credentials saved for the selected account still take priority.\n- **Roomier account settings** \u2014 the Accounts pane has a consistent size, and the\n  settings window provides enough width for its tabs."
+  },
+  {
     "version": "0.1.42",
     "build": 109,
     "date": "2026-09-29",
