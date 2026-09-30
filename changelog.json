@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.44",
+    "build": 111,
+    "date": "2026-09-30",
+    "notes": "### Fixes\n\n- **Refresh models when switching accounts** \u2014 session model pickers now refresh when\n  your selected account or inherited account changes. You can also refresh the list manually.\n- **Account-aware bot model choices** \u2014 new bots use the default account's catalog, and\n  existing bot editors use the account assigned to that bot.\n- **No misleading fallback lists** \u2014 failed account lookups no longer silently show the\n  Mac's default catalog. Model discovery also avoids conflicting inherited credentials."
+  },
+  {
     "version": "0.1.43",
     "build": 110,
     "date": "2026-09-29",
