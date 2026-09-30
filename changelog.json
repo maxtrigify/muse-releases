@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.45",
+    "build": 112,
+    "date": "2026-09-30",
+    "notes": "### Improvements\n\n- **Resize the browser and work panel** \u2014 hover over the left edge of the right-hand\n  panel and drag to make it wider or narrower. Your chosen width is remembered when\n  you reopen the panel or restart Muse, and works across its browser and other tabs."
+  },
+  {
     "version": "0.1.44",
     "build": 111,
     "date": "2026-09-30",
