@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.46",
+    "build": 113,
+    "date": "2026-10-01",
+    "notes": "### Improvements\n\n- **Choose your bot's account** \u2014 pick a saved Personal or Work account when creating\n  a bot. Muse remembers the choice for its sessions and shows that account's model choices.\n- **Give bots their own helpers** \u2014 in Manage agents, configure subagents with their\n  own Codex or Claude Code provider, saved account, role and model. A Claude bot can\n  delegate to Codex, or vice versa, using the subscription you selected for each helper.\n- **Keep helper accounts predictable** \u2014 unavailable helper accounts produce an error\n  instead of silently switching to another subscription, including when a helper resumes."
+  },
+  {
     "version": "0.1.45",
     "build": 112,
     "date": "2026-09-30",
