@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.47",
+    "build": 114,
+    "date": "2026-10-01",
+    "notes": "### Fixes\n\n- **Use your Mac login for bot helpers** \u2014 subagents now offer \u201cThis Mac\u2019s login\u201d\n  alongside saved accounts, with the corresponding model choices. This explicitly\n  uses the provider\u2019s local login even when another account is your global default.\n- **Keep the work panel specific to each conversation** \u2014 opening or closing the\n  right-hand panel in one session, bot or team no longer changes it in the others.\n  Returning to a conversation restores its choice during the current Chat session.\n- **Use Playbooks in a narrow panel** \u2014 the editor adapts to the available width\n  so its fields and buttons remain reachable.\n- **Clearer playbook validation** \u2014 \u201cValidate steps\u201d now explains that it checks\n  fields without running the task. Edited steps must be validated again, and changes\n  clear outdated routine previews. Failed saves preserve the last valid playbook.\n- **See the correct routine interval** \u2014 the routine editor now shows its saved\n  interval instead of always displaying one hour."
+  },
+  {
     "version": "0.1.46",
     "build": 113,
     "date": "2026-10-01",
