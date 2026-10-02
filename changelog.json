@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.48",
+    "build": 115,
+    "date": "2026-10-02",
+    "notes": "### Fixes\n\n- **Up-to-date models for each account.** Codex and Claude Code model pickers now ask the selected account\u2019s installed provider for its available models, so switching accounts refreshes the choices.\n- **Newer Codex desktop models appear in Muse.** Muse recognises the current Codex desktop launcher and prefers it over an older standalone CLI, including models such as GPT-6.1-Sol when available to your account.\n- **Clearer signed-out model lists.** Accounts that are not signed in no longer show generic provider models as if they were available."
+  },
+  {
     "version": "0.1.47",
     "build": 114,
     "date": "2026-10-01",
