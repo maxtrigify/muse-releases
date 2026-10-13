@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.51",
+    "build": 118,
+    "date": "2026-10-13",
+    "notes": "### New\n\n- **Queue your next message.** While a bot or session is working, choose Add to queue or press Return. Messages run in order after the current work finishes. Remove a pending message at any time; Stop pauses the queue until you resume it. Saved queues reopen paused when you restart Muse.\n- **A guided welcome.** New users get a step-by-step introduction to Muse, choose what they want help with and pick a starter agent. A skippable Home tour explains the main controls, with a Getting started checklist to help you find your way. Existing users can replay the welcome or take the tour from the Muse menu.\n\n### Improvements\n\n- **Choose the account for every automation.** Both automation editors now let you pick which AI account runs the task and show what the default account means.\n- **Highfell for new spaces.** New workspaces open with the Highfell theme. Existing theme choices stay as they are."
+  },
+  {
     "version": "0.1.50",
     "build": 117,
     "date": "2026-10-13",
