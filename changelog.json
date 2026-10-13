@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.50",
+    "build": 117,
+    "date": "2026-10-13",
+    "notes": "### Fixes\n\n- **Home is back.** 0.1.49 opened on Chat and hid the Home tab. Muse now opens on Home again, with your daily brief, cards and to-dos, and Home sits beside Chat at the top of the window."
+  },
+  {
     "version": "0.1.49",
     "build": 116,
     "date": "2026-10-13",
