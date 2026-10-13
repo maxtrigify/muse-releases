@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.52",
+    "build": 119,
+    "date": "2026-10-13",
+    "notes": "### New\n\n- **Make your dashboards your own.** Press Edit on any dashboard to drag cards into the order you want, make each card Small, Wide or Full width, and give it its own colour. Pick the dashboard's accent colour, how see-through its cards are (Frosted, Smoked or Solid) and its icon. Cards in a row now line up at the same height, so pages look tidy.\n- **Ask an agent to arrange it.** Agents can now resize, recolour and reorder cards for you, e.g. \u201cmake the LinkedIn chart full width and the dashboard blue\u201d."
+  },
+  {
     "version": "0.1.51",
     "build": 118,
     "date": "2026-10-13",
