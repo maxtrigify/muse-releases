@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.54",
+    "build": 121,
+    "date": "2026-10-14",
+    "notes": "### New\n\n- **Edit bots completely.** Right-click a bot \u2192 Edit bot to change anything you set when hiring it: name, responsibility, face, icon or photo, colour, shape, harness, account, model, reasoning, permissions and instructions. Open chats pick up the changes straight away. Switching harness starts a fresh chat, and the bot keeps its memory and notes.\n- **Edit teams completely.** Right-click a team \u2192 Edit team to rename it, rewrite its brief, add or remove members and change who leads. The team keeps its conversation.\n\n### Improvements\n\n- **Teams no longer stop for approval at every step.** Each team now has its own Permissions setting, and new teams start on Bypass permissions so they can work unattended. Existing teams keep their current behaviour until you change it in Edit team."
+  },
+  {
     "version": "0.1.53",
     "build": 120,
     "date": "2026-10-14",
