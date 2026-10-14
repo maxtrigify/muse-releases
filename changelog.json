@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.53",
+    "build": 120,
+    "date": "2026-10-14",
+    "notes": "### New\n\n- **Tabs in spreadsheets.** A spreadsheet can now hold several tabs, like Excel and Google Sheets. Add one with +, double-click to rename, drag to reorder, and right-click to duplicate or delete (with undo). Formulas can use other tabs, such as `=Sales!B2` or `=SUM('Q1 data'!A1:A9)`, and renaming a tab updates the formulas that use it. Excel export keeps every tab; CSV export lets you pick one. Your agents can work across tabs too.\n- **Read long text in a cell.** Drag the bottom edge of a row number to make a row taller and its text wraps. Double-click the edge, or right-click \u2192 Fit row height to text, to size rows to their text. Long text now runs on into empty cells to the right instead of being cut off, and the formula bar's expand button (\u2303\u21e7U) shows a cell's whole text.\n- **Home greets you each morning.** The first time you come back after 6am, Muse opens on Home so your brief is the first thing you see.\n\n### Improvements\n\n- **Unsent messages are kept.** Text you've typed but not sent stays in each chat when you switch away or restart Muse, and long messages scroll instead of being hidden.\n- **Card updates stay out of the way.** The agents that refresh dashboard and Home cards now close themselves when done and no longer fill up Chat or Home's conversation list. If an update fails, the card shows why.\n- **Cleaner helper chats.** When a bot helps with a document, sheet or dashboard, its behind-the-scenes instructions no longer appear in your messages."
+  },
+  {
     "version": "0.1.52",
     "build": 119,
     "date": "2026-10-13",
