@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.55",
+    "build": 122,
+    "date": "2026-10-15",
+    "notes": "### Fixes\n\n- **Find your agents\u2019 documents.** Agents now put documents in Documents and provide file links in Chat for Markdown files, instead of directing you to Canvas.\n- **Export your latest spreadsheet edits.** Excel and Google upload exports include the cell you are still typing and keep every workbook tab. Saving an open tab also preserves tabs an agent added while you were editing.\n- **No stale export after a failed save.** Document and spreadsheet exports now stop and show the error if your latest changes cannot be saved.\n\n### Improvements\n\n- **Clearer Google export.** \u201cOpen in Google\u2026\u201d is now \u201cPrepare upload to Google\u2026\u201d. It identifies the new file to upload to Drive; it does not automatically sync or update an existing Google file. Export the whole workbook as Excel to upload all its tabs together."
+  },
+  {
     "version": "0.1.54",
     "build": 121,
     "date": "2026-10-14",
