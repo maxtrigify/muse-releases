@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.56",
+    "build": 123,
+    "date": "2026-10-15",
+    "notes": "### New\n\n- **Know when work finishes.** Muse now shows native macOS notifications when a bot or session finishes or fails. Click a notification to open its conversation. Notifications are on by default; allow them when macOS asks.\n- **Choose your notifications.** Settings \u2192 Notifications lets you turn alerts on or off for bots and sessions and optionally enable sound. Muse stays quiet while you are viewing the conversation, and delegated subtasks do not create extra alerts."
+  },
+  {
     "version": "0.1.55",
     "build": 122,
     "date": "2026-10-15",
