@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.57",
+    "build": 124,
+    "date": "2026-10-18",
+    "notes": "### Improvements\n\n- **Faster typing in long chats.** Typing in a bot or session chat no longer slows down as the conversation grows. Earlier messages are left alone while you type, and unsent drafts save once you pause instead of on every keystroke.\n\n### Fixes\n\n- **\u201cShow earlier items\u201d shows the real count.** The button above long conversations now says how many earlier items it will load."
+  },
+  {
     "version": "0.1.56",
     "build": 123,
     "date": "2026-10-15",
