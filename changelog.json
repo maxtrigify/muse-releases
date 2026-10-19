@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.59",
+    "build": 126,
+    "date": "2026-10-19",
+    "notes": "### New\n\n- **Stay signed in when you switch browsers.** Importing from Dia, Chrome, Arc, Comet, Brave, Edge or Vivaldi now brings your sign-ins across as well as your bookmarks, so your sites open already signed in. macOS asks once per browser; choose Always Allow. Passwords are not copied, and your other browser is left untouched. Profiles now show their real names.\n- **Search OpenCode models.** OpenCode's model menu now has a search box, lists the newest models first and hides deprecated ones.\n\n### Fixes\n\n- **No more \"no application set to open muse://start\" alert.** Opening Browser or a new tab no longer pops up a macOS dialog."
+  },
+  {
     "version": "0.1.58",
     "build": 125,
     "date": "2026-10-19",
