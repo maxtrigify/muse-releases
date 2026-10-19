@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.1.58",
+    "build": 125,
+    "date": "2026-10-19",
+    "notes": "### New\n\n- **Browser in Chat.** Browser now sits next to Documents in Chat's sidebar, with tabs, bookmarks and Ask AI (\u2318J) for the page you're on. Browsers inside session work panels have a slim bar with \"Open in Browser\", and you can see when an agent is reading or using a page.\n\n### Fixes\n\n- **Muse no longer loses your workspace when it can't read it.** If a newer Muse (such as a development build) saved your workspace, this version used to start empty and then save over your sessions. Unknown settings now fall back to defaults. If the workspace still can't be read, Muse keeps a copy, leaves the original untouched and tells you what happened."
+  },
+  {
     "version": "0.1.57",
     "build": 124,
     "date": "2026-10-18",
