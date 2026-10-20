@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.2.0",
+    "build": 128,
+    "date": "2026-10-20",
+    "notes": "### Muse is now Otto\n\n- **Same app, new name.** Muse is now called Otto, with a new icon and a new home at openotto.io. Everything you had comes with you: chats, bots, memory, automations, documents and settings move across automatically the first time Otto opens. The app also renames itself from Muse to Otto in your Applications folder.\n- **macOS will ask for permissions once more.** Because the app has a new name, macOS treats it as new and asks again for the microphone, screen recording, notifications and access to saved sign-ins. Choose Allow (or Always Allow for sign-ins) and you won't be asked again.\n- **Your iPhone app needs pairing again.** The phone app is also called Otto now: install it again and pair it with your Mac.\n- **Otto is open source.** The code is public on GitHub under the Apache 2.0 licence.\n\n### New\n\n- **A friendlier Browser new tab.** New tabs open on Otto with one box to ask a question or search, and you can pin and unpin your favourite sites.\n\n### Changes\n\n- **Canvas has been retired.** The spatial Canvas, already hidden under Labs, has been removed. Home and Chat are the app. Nothing you made there is lost: sessions from every canvas are still in Chat.\n\n### Fixes\n\n- **Browser confirmations no longer hang.** A confirmation that goes unanswered now times out cleanly instead of stalling the agent."
+  },
+  {
     "version": "0.1.59",
     "build": 126,
     "date": "2026-10-19",
