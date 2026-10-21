@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.2.1",
+    "build": 129,
+    "date": "2026-10-21",
+    "notes": "### Fixes\n\n- **Messaging works again on macOS 27.** On macOS 27, Otto could save its iMessage connection in a way the system then refused to let it read back, so messaging stopped starting. It now saves normally. If your messaging was affected, open Settings \u203a Messaging and pair again; the old file is kept aside, not deleted."
+  },
+  {
     "version": "0.2.0",
     "build": 128,
     "date": "2026-10-20",
