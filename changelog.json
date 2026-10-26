@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.2.7",
+    "build": 135,
+    "date": "2026-10-26",
+    "notes": "### Fixes\n\n- **Otto opens on macOS 15 again.** Otto 0.2.6 closed straight away at launch on macOS Sequoia because a system library it needs wasn't included in the download. It's now bundled with the app, and release checks catch any library that's missing."
+  },
+  {
     "version": "0.2.6",
     "build": 134,
     "date": "2026-10-26",

@@ -1,10 +1,10 @@
 {
-  "version": "0.2.6",
-  "build": 134,
+  "version": "0.2.7",
+  "build": 135,
   "date": "2026-10-26",
-  "artifactURL": "https://github.com/maxtrigify/muse-releases/releases/download/v0.2.6/Otto-0.2.6.zip",
-  "downloadURL": "https://github.com/maxtrigify/muse-releases/releases/download/v0.2.6/Otto-0.2.6.dmg",
-  "sha256": "96e818d4856add81179c7ddd6d36b1f6c89990bae7644a2897d5669b5667c317",
-  "byteCount": 57653742,
+  "artifactURL": "https://github.com/maxtrigify/muse-releases/releases/download/v0.2.7/Otto-0.2.7.zip",
+  "downloadURL": "https://github.com/maxtrigify/muse-releases/releases/download/v0.2.7/Otto-0.2.7.dmg",
+  "sha256": "0b43d4b4f677063ed076484a7cb29eb0f17da803986e3591f27e2ad25a98f65c",
+  "byteCount": 57666152,
   "minimumMacOSVersion": "15.0"
 }
