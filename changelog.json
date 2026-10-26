@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.2.5",
+    "build": 133,
+    "date": "2026-10-26",
+    "notes": "### New\n\n- **Switch spaces with Option\u2013Tab.** Hold Option and tap Tab to cycle through your recently used spaces, then release Option to switch. Tap once to return to your previous space, or add Shift to cycle backwards. The switcher shows each space\u2019s icon and name; Escape cancels.\n- **Keep work running as you switch.** The keyboard switcher uses Otto\u2019s existing space navigation, keeping running agents, drafts and each space\u2019s state in place. The shortcuts are listed in Settings \u2192 Shortcuts."
+  },
+  {
     "version": "0.2.4",
     "build": 132,
     "date": "2026-10-26",
