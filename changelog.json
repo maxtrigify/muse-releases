@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.2.6",
+    "build": 134,
+    "date": "2026-10-26",
+    "notes": "### Fixes\n\n- **Log in links open in a Browser tab.** Clicking a website's \"Log in\" link (such as HeyReach's) now opens the login page as a tab inside Otto instead of a separate window. Sign-in windows that a site opens itself, such as \"Continue with Google\", still open separately so they can finish signing you in."
+  },
+  {
     "version": "0.2.5",
     "build": 133,
     "date": "2026-10-26",
