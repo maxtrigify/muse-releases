@@ -1,5 +1,11 @@
 [
   {
+    "version": "0.2.8",
+    "build": 136,
+    "date": "2026-10-27",
+    "notes": "### Fixes\n\n- **Approval requests stay on screen until you answer them.** In Ask to approve mode, the approval card could flash up and vanish while the agent kept waiting, leaving it stuck. It now stays until you click Approve or Deny, for chats and bots alike, and the agent carries on as soon as you do. Questions an agent asks you stay put the same way.\n- **No more approval cards that can't be answered.** An agent's own message that happened to mention an approval could show up as a card where Approve did nothing. Those false cards no longer appear, and if one ever does, Approve or Deny now clears it.\n- **Text is readable on every theme.** Terminal output from agents is adjusted to stay readable against your theme, so white text on light themes and black text on dark ones no longer disappear. The sidebar, activity notes and tool steps get a soft backing over theme artwork, and header icons and buttons hold their contrast too.\n\n### New\n\n- **Rename, move or delete a space.** Open the space menu and choose Manage spaces to rename a space, point it at a different folder, or delete it. Deleting moves Otto's own data for that space to the Trash and never touches your files. You can't delete or move the space you're in, so switch to another one first."
+  },
+  {
     "version": "0.2.7",
     "build": 135,
     "date": "2026-10-26",
